@@ -137,4 +137,4 @@ Here's a [link to my video result](./project_video.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-In order to improve the performace a better sanity check function would have to be developed. Up to now I use only line distance and curvature similarity test. If this one fails, the lines are identified as corrupted and the brute search function starts over again. The technique of obtaining the binary images could be improved using more channel and finetuning the treshold parameters. 
+In order to improve the performace a better sanity check function would have to be developed. Up to now I use only line distance and curvature similarity test. If this one fails, the lines are identified as corrupted and the brute search function starts over again. The technique of obtaining the binary images could be improved using more channel and finetuning the treshold parameters. A big challenge for this algorithm woud be to correctly identify the lane lines if shadows or color changes would be parallel to them.  
