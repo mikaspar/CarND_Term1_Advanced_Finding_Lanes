@@ -21,8 +21,8 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/undistort_output.png "Undistorted"
 [image2]: ./examples/Sobel_X.jpg "Sobel X"
-[image3]: ./examples/Sobel_Mag.jpg "Sobel Magnitude"
-[image4]: ./examples/S_Channel.jpg "S-Channel"
+[image3]: ./examples/S_Channel.jpg "S-Channel"
+[image4]: ./examples/Combined.jpg "Combined"
 [image5]: ./examples/warped_line_lanes.png "Warped Lane Lines"
 [image6]: ./examples/Result.jpg "Result"
 [video1]: ./project_video.mp4 "Video"
@@ -61,10 +61,20 @@ To demonstrate the results of this step, I saved the undistortion corrected imag
 
 I proved results of all in the lesson provided techniques to obtain a proper binary image to identify the lane lines. At the end I winded up using the combination of Sobel X, Magnitude Sobel and S-channel of the HLS space. The result ouputs the sobel_m_S function.
 
-[image1]
-[image2]
-[image3]
-[image4]
+Sobel X:
+
+![alt text][image2]
+
+S-Channel:
+
+![alt text][image3]
+
+Combined:
+
+![alt text][image4]
+
+
+
 [image5]
 [image6]
 [video1]
@@ -92,9 +102,13 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
+After warping the binary image I applied once Sobel X in order to filter out the horizontal edges in the image.
+
 Then I used the histogram function along the x-axis to find the pixel peaks representing the lane lines. After that I used the brute search function to identify the pixels of the left and right lane line. Once lane found and polynom can be fitted, previous knowledge search can be started in order to search for lane pixels in surrounding area of the found lane only.
 
+Warped Lane Lines:
 
+![alt text][image5]
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -103,6 +117,10 @@ I did this in the function curve_pos_calc of the provided notebook, using the ca
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 I implemented this step in lines in the function final of the notebook.
+
+Result:
+
+![alt text][image6]
 
 
 ---
