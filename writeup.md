@@ -20,11 +20,11 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image2]: ./examples/Sobel_X.jpg "Sobel X"
+[image3]: ./examples/Sobel_Mag.jpg "Sobel Magnitude"
+[image4]: ./examples/S_Channel.jpg "S-Channel"
+[image5]: ./examples/warped_line_lanes.png "Warped Lane Lines"
+[image6]: ./examples/Result.jpg "Result"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -59,7 +59,18 @@ To demonstrate the results of this step, I saved the undistortion corrected imag
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I proved results of all in the lesson provided techniques to obtain a proper binary image to identify the lane lines. At the end I winded up using the combination of Magnitude Sobel and S-channel of the HLS space. The result ouputs the sobel_m_S function.
+I proved results of all in the lesson provided techniques to obtain a proper binary image to identify the lane lines. At the end I winded up using the combination of Sobel X, Magnitude Sobel and S-channel of the HLS space. The result ouputs the sobel_m_S function.
+
+[image1]
+[image2]
+[image3]
+[image4]
+[image5]
+[image6]
+[video1]
+
+
+
 
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
@@ -70,10 +81,10 @@ This resulted in the following source and destination points:
 
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
-| 260, 700      | 255, 0        | 
+| 260, 700      | 260, 0        | 
 | 1060, 70      | 1060, 720      |
-| 685, 450      | 1070, 720      |
-| 595, 450      | 255, 0        |
+| 685, 450      | 1060, 720      |
+| 595, 450      | 260, 0        |
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
